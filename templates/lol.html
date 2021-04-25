@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn<!-- Remote style sheet -->.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+        #header {
+            height: 100px;
+            background: darkcyan;
+
+        }
+        #content {
+            flex-grow: 1;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            display:flex;
+        }
+        #footer {
+            background: darkslateblue;
+            font-size: 16px;
+            position: relative;
+            left: 0;
+
+        }
+        .currency {
+            color: darkslateblue;
+            font-weight: 900;
+            font-style: oblique;
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-around;
+
+        }
+        .name{
+            padding: 15px;
+        }
+        .numbers{
+            padding: 15px;
+        }
+        .ExchangeRates{
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+    </div>
+    <div id="content">
+        {% for item in items %}
+        <div class="currency">
+            <div class="name">{{ item.name }}</div>
+            <div class="numbers">{{ item.numbers }}</div>
+            <div class="ExchangeRates">{{ item.ExchangeRates }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="footer">
+    </div>
+</body>
+</html>
